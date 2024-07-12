@@ -37,33 +37,11 @@ To run this project, you will need R version 4.3.1 (2023-06-16 ucrt) -- "Beagle 
 clone the repository as follows
 
 ```bash
-git clone https://github.com/Akhondokevin761/SIMPLE-DATA-EXPLORATION-IN-PYTHON.git
+git clone https://github.com/Akhondokevin761/DATA-EXPLORATION-IN-R.git
 
-cd SIMPLE-DATA-EXPLORATION-IN-PYTHON
+cd DATA-EXPLORATION-IN-R
 ```
 
-Next, intall dependencies
-
-```bash
-pip install -r requirements.txt
-
-```
-
-Then, launch jupyterlab as follows
-
-```bash
-jupyter lab
-
-```
-
-Open the Project1 notebook under 'notebooks/Project1.ipynb' and start your exploration.
-
-You can use the main script to interact with the application as follows.
-
-```bash
-python main.py
-
-```
 
 ## Project Structure
 
