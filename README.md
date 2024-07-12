@@ -51,6 +51,7 @@ This section outlines how files and directories are organized. It further brief 
 
 - 'Data/' : Contains data used in this project
 - 'Code/' : Contains the RMarkdown  of data exploration
+- 'Output/' : Contains an HTML output file for the data data exploration
 
 
 ### 'Data/'
@@ -60,6 +61,10 @@ This contains the original sample data named "smartphone_category(1).csv" that w
 ### 'Code/'
 
 Contains the RMarkdown named "pro1.Rmd" that outlines all the steps used in data exploration from step 1 of loading the libraries to final step of exporting the data to xlsx file.
+
+### 'Output/'
+
+Contains an HTML output of the data exploration.
 
 
 ## Data
