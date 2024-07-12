@@ -50,21 +50,21 @@ This section outlines how files and directories are organized. It further brief 
 ### Directory Structure
 
 - 'Data/' : Contains data used in this project
-- 'Notebook/' : Contains the jupyter notebook of data exploration
+- 'Code/' : Contains the RMarkdown  of data exploration
 
 
 ### 'Data/'
 
-This contains the original sample data named "smartphone_category(1).csv" that was used in the exploration and the final exported data from python named "SMARTDATA.csv" which has an additional variable named Performance.
+This contains the original sample data named "smartphone_category(1).csv" that was used in the exploration and the final exported data from R-Studio named "SMARTPHONEDATA.xlsx" which has an additional variable named Performance.
 
-### 'Notebook/'
+### 'Code/'
 
-Contains the jupyter notebook named "Project1.ipynb" that outlines all the steps used in data exploration from step 1 of loading the libraries to final step of exporting the data to csv file.
+Contains the RMarkdown named "pro1.Rmd" that outlines all the steps used in data exploration from step 1 of loading the libraries to final step of exporting the data to xlsx file.
 
 
 ## Data
 
-This is mainly a folder that contains the sample data(smartphone_category(1).csv) and the final exported data(SMARTDATA.csv) used in this project.
+This is mainly a folder that contains the sample data(smartphone_category(1).csv) and the final exported data(SMARTPHONEDATA.xlsx) used in this project.
 
 
 ## Contribution
