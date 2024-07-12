@@ -1,0 +1,154 @@
+---
+title: "pro 1"
+author: "Kevin Akhondo"
+date: "2024-07-08"
+output: html_document
+---
+
+
+```{r}
+#Import libraries
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+library(writexl)
+```
+
+
+```{r}
+#import data
+smart_data <- read.csv("C:\\Users\\KEVINS\\OneDrive\\Desktop\\TAB\\smartphone_category (1).csv")
+#View the first 10 rows
+head(smart_data,10)
+#View the complete data
+View(smart_data)
+```
+
+
+```{r}
+#skim through the data using skimr
+#by using this function, we are able to check if there are any misssing values, calculate simple descriptive statistics
+skimr::skim(smart_data)
+#We can also check for nulls as follows
+is.na(smart_data) #FALSE means that there are no nulls
+#We can also find the total number of nulls using the code below
+sum(is.na(smart_data))
+```
+
+```{r}
+#Obtain simple descriptive statistics
+summary(smart_data)
+```
+
+```{r}
+#Checking for outliers using boxplots
+
+ggplot(smart_data,aes(Sale.Price))+
+  geom_boxplot()+
+  ggtitle("Sales Price Boxplot")
+
+ggplot(smart_data,aes(Mrp))+
+  geom_boxplot()+
+  ggtitle("Mrp Boxplot")
+
+ggplot(smart_data,aes(Number.Of.Ratings))+
+  geom_boxplot()+
+  ggtitle("Number of ratins Boxplot")
+
+ggplot(smart_data,aes(Number.Of.Reviews))+
+  geom_boxplot()+
+  ggtitle("Number of reviews Boxplot")
+
+```
+
+```{r}
+#Group by RAM and find the total number of smartphones in each RAM
+group1<-smart_data%>%
+  group_by(Ram)%>%
+  summarise(count = n(), Average.of.Mrp = mean(Mrp), Average.of.SalesPrice = mean(Sale.Price), Average.of.NumberRatings = mean(Number.Of.Ratings))
+group1
+```
+
+```{r}
+#Group by brand, find the total count, and averages then arrande in descending order based on count
+group2<-smart_data%>%
+  group_by(Brand)%>%
+  summarise(count = n(), Average.of.Mrp = mean(Mrp), Average.of.SalesPrice = mean(Sale.Price), Average.of.NumberRatings = mean(Number.Of.Ratings))%>%
+  arrange(desc(count))
+group2
+```
+
+```{r}
+#We create a new column called Performance in which the star ratings are categorized as either Poor, average or best perfomance as follows
+smart_data<- smart_data%>%
+  mutate(Performance = case_when(smart_data$Star.Rating<2.0~"Poor Performance",
+                                 smart_data$Star.Rating>=2.0 & smart_data$Star.Rating<=3.8 ~ "Average Perfomance",
+                                 smart_data$Star.Rating>3.8 ~ "Best Performance"))
+view(smart_data)
+```
+
+
+```{r}
+#Getting the count of all the smart phones in the three performance groups
+Count_1<-smart_data%>%
+  group_by(Performance)%>%
+  summarise(count = n(), Average.Sale.Price = mean(Sale.Price), Total.Sale.Price = sum(Sale.Price))
+Count_1
+```
+
+```{r}
+#Exporting the data to an excel file
+write_xlsx(smart_data,"C:/Users/KEVINS/OneDrive/Desktop/TABLEAU/SMARTPHONEDATA.xlsx")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
